@@ -2,21 +2,34 @@
     {
         "nome": "Famiglia Lucco",
         "cozinha": "Italiana",
-        "funcionamento": 
+        "funcionamento":
         "\n dom -> 11h-23h \n seg -> 11h-22h \n ter -> 11h-22h \n qua -> 11h-22h \n qui -> 11h-23h \n sex -> 11h-23h \n sab -> 11h-23h"
 
 
     },
     {
         "nome": "China in Box",
-        "cozinha": "Chinesa"
+        "cozinha": "Chinesa",
+        "funcionamento":
+        "\n dom -> 11h-23h \n seg -> 11h-22h \n ter -> 11h-22h \n qua -> 11h-22h \n qui -> 11h-23h \n sex -> 11h-23h \n sab -> 11h-23h"
     },
     {
         "nome": "Rei da Picanha",
-        "cozinha": "Brasileira"
+        "cozinha": "Brasileira",
+        "funcionamento":
+        "\n dom -> 11h-23h \n seg -> 11h-22h \n ter -> 11h-22h \n qua -> 11h-22h \n qui -> 11h-23h \n sex -> 11h-23h \n sab -> 11h-23h"
+        
     },
     {
         "nome": "Ponte Nova",
-        "cozinha": "Francesa"
+        "cozinha": "Francesa",
+        "funcionamento":
+        "\n dom -> 11h-23h \n seg -> 11h-22h \n ter -> 11h-22h \n qua -> 11h-22h \n qui -> 11h-23h \n sex -> 11h-23h \n sab -> 11h-23h"
+    },
+    {
+        "nome": "Bella Vista",
+        "cozinha": "Bairro",
+        "funcionamento":
+        "\n dom -> 11h-23h \n seg -> 11h-22h \n ter -> 11h-22h \n qua -> 11h-22h \n qui -> 11h-23h \n sex -> 11h-23h \n sab -> 11h-23h"
     }
 ]
