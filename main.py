@@ -51,8 +51,6 @@ def fazerCadastro(restauranteCad, nomeReserva, data, horario, quantPessoas):
         json.dump(reserva, arquivo, indent=4)
     print("😎 USUÁRIO ADICIONADO COM SUCESSO!")
 
-def
-
 def limpa():
     os.system('cls')
 
