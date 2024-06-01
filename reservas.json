@@ -1,0 +1,34 @@
+[
+    {
+        "restauranteCad": "Ponte Nova",
+        "nomeReserva": "Italo",
+        "data": "21-06-2026",
+        "horario": "19:00",
+        "quantPessoas": "3",
+        "CPF": "12345"
+    },
+    {
+        "restauranteCad": "Famiglia Lucco",
+        "nomeReserva": "italo",
+        "data": "19-09-2024",
+        "horario": "19:00",
+        "quantPessoas": "7",
+        "CPF": "23456"
+    },
+    {
+        "restauranteCad": "China in Box",
+        "nomeReserva": "Italo",
+        "data": "21-06-2024",
+        "horario": "20:30",
+        "quantPessoas": "3",
+        "CPF": "13478"
+    },
+    {
+        "restauranteCad": "Famiglia Lucco",
+        "nomeReserva": "Frank",
+        "data": "02-06-2024",
+        "horario": "20:40",
+        "quantPessoas": "3",
+        "CPF": "134887"
+    }
+]
