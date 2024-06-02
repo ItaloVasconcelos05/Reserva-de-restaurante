@@ -16,12 +16,19 @@ def menu_Inicial():
     print('1. Modo Supervisor') 
     print('2. Modo Cliente')
     print('3. Sair do sistema')
-     
-def menu_Cliente():
-    print('|  Digite a opção desejada  |')
+
+def limpa():
+    os.system('cls')
+
+
+
+
+#Funções do Cliente
+def menu_cliente():
+    print('|   Menu Cliente   |')
     print('1. Pesquise o Restaurante')
     print('2. Visualize sua reserva')
-    print('3. Sair do Sistema')
+    print('3. Voltar')
 
 def escolha_restaurante():
     limpa()
@@ -80,9 +87,9 @@ def atualizar_reserva(dados):
         match resposta2:
             case 1:
                 novoCPF = input('Digite o novo CPF\n')
-                dados["CPF"] = novoCPF
                 mudar_dados(dados["CPF"], novoCPF, 'CPF')
-                
+                dados["CPF"] = novoCPF
+
             case 2:
                 novoRestauranteCad = input('Digite o novo Restaurante\n')
                 dados["restauranteCad"] = novoRestauranteCad
@@ -109,7 +116,7 @@ def atualizar_reserva(dados):
                 mudar_dados(dados["CPF"], novoHorario, 'horario')
 
             case 7:
-                print('Dados Atualizados com SUCESSO!!')
+                print('😙 Dados Atualizados com SUCESSO!!')
                 sleep(1)
                 limpa()
                 break
@@ -140,9 +147,18 @@ def buscar_reserva(CPF):
             return reserva
     return None
 
-def deletar_reserva():
-    print('Em construção')
+def deletar_reserva(CPF):
+    reservas = ler_arquivo_json('reservas.json')
+    
+    for reserva in reservas:
+        if reserva['CPF'] == CPF:
+            reservas.remove(reserva)
+    
+    with open('reservas.json', 'w') as arquivo:
+        json.dump(reservas, arquivo, indent=4)
 
+    print("😡 USUÁRIO EXCLUÍDO COM SUCESSO!")
+    
 def exibir_dados(dados):
     if dados:
         print(f'Reserva no CPF {dados["CPF"]}\n')
@@ -160,13 +176,16 @@ def exibir_dados(dados):
         if resposta == 1:
             atualizar_reserva(dados)
         elif resposta == 2:
-            deletar_reserva()
+            deletar_reserva(dados['CPF'])
+            sleep(2)
+            limpa()
         elif resposta == 3:
             limpa()
             visualizar_reserva()
     else:
         print("Código não encontrado.")
         sleep(2)
+        limpa()
         visualizar_reserva()
 
 def visualizar_reserva():
@@ -175,8 +194,17 @@ def visualizar_reserva():
     CPF_encontrado = buscar_reserva(CPF)
     exibir_dados(CPF_encontrado)   
 
-def limpa():
-    os.system('cls')
+
+
+
+#Funções do Supervisor
+def menu_supervisor():
+    print('|   Menu Supervisor   |')
+    print('1. Lista de Restaurantes')
+    print('2. Adicione Seu Restaurante')
+    print('3. Visualize seu Restaurante')
+    print('4. Voltar')
+
 
 
 
@@ -189,20 +217,37 @@ def main():
         match (resposta_Inicial):
             
             case 1:
-                print('Em manutenção...')
-                break
+                print ('Abrindo Sistema...')
+                sleep(2)
+                limpa()
+                menu_supervisor()
+                resposta1 = int(input('Escolha uma opção\n'))
+                match resposta1:
+                    case 1:
+                        #Mostrar Lista dos Restaurantes
+                        print('Em Desenvolvimento...')
+                    case 2:
+                        #Adicionar Seu Próprio Restaurante
+                        print('Em Desenvolvimento...')
+                    case 3:
+                        #Vizualizar e modificar dados do Restaurante
+                        print('Em Desenvolvimento...')
+                    case 4:
+                        print('Voltando...')
+                        sleep
+                        main()
+                
 
             case 2: 
                 print ('Abrindo Sistema...')
                 sleep(2)
                 limpa()
-                menu_Cliente()
+                menu_cliente()
                 resposta = int(input('Escolha uma opção\n'))
                 match (resposta):
                     
                     case 1:
                         pesquisar_restaurante()
-                        sleep(2)
                         main()
 
                     case 2:
@@ -210,14 +255,22 @@ def main():
                         visualizar_reserva()
                         sleep(1)
                         main()
+
+                    case 3:
+                        print('Voltando...')
+                        sleep
+                        main()
                     
 
             case 3:
                 print('Saindo...😁')
                 sleep(3)
                 break
+
             case __:
                 print('Opção inválida 😑')
+                sleep(1)
+                main()
 
 if __name__ == '__main__':
     main()
